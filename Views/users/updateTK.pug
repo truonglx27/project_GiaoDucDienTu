@@ -1,0 +1,104 @@
+extends ../../Views/layouts/crform
+
+block content
+    .container
+        nav.header
+            .header-left
+                a.right-alig(href='/users')
+                    img(src='../BTL_logo/logo_chinh.png ', alt=' ')
+                i.fas.fa-map-marker-alt
+                h4.right-alig TR&#x1AF;&#x1EDC;NG THPT CAO B&Aacute; QU&Aacute;T
+                strong.right-pd.marg H&#x1ECD;c K&#x1EF3; 1
+                strong 2018-2019
+            .header-right
+                ul
+                    li
+                        a.pd-r(href='# ')
+                            img(src='../BTL_logo/logo_facebook.png ', alt=' ')
+                    li
+                        a.pd-r(href='## ')
+                            img(src='../BTL_logo/logo_Tiwter.png ', alt=' ')
+                    li
+                        a.pd-r(href='### ')
+                            img(src='../BTL_logo/logo_youtube.png ', alt=' ')
+                    li
+                        a.pd-r(href='#### ')
+                            img(src='../BTL_logo/logo_setting.png ', alt=' ')
+                    if student
+                        li
+                            a(href='/auth/login')
+                                img(src='../BTL_logo/logo_user_1.png',title='Đăng Xuất')
+        .menu
+            ul
+                li
+                    i.fas.fa-users
+                    a(href='/users') QU&#x1EA2;N L&Yacute; H&#x1ED2; S&#x1A0; H&#x1ECC;C SINH
+                li
+                    i.fas.fa-book
+                    a(href='### ') QU&#x1EA2;N L&Yacute; T&Agrave;I KHO&#x1EA2;N H&#x1ECC;C SINH
+        .display-right
+            form(action="/users/update" ,method="POST") 
+                .tt
+                    h2
+                        i.fas.fa-address-card
+                        |  THÔNG TIN HỌC SINH
+                .tl
+                    div
+                        label(for='name') H&#x1ECD; t&ecirc;n:
+                        input(type='text', name='name', value= student? student.name: "")
+                        input(type='hidden', name='id', value= student? student._id: "")
+                    div
+                        label(for='gender') Gi&#x1EDB;i t&iacute;nh :
+                        input(type='text', name='gender' , value= student? student.gender: "")
+                    div
+                        label(for='date') ng&agrave;y sinh:
+                        input(type='text', name='date', value= student? student.date: "")
+                .tv
+                    label(for='country') Nguy&ecirc;n Qu&aacute;n:
+                    input(type='text', name='country', value= student? student.country: "")
+                .tv
+                    label(for='country') Nguy&ecirc;n Qu&aacute;n:
+                    input(type='text', name='country', value= student? student.country: "")
+                .tv
+                    label(for='country') Nguy&ecirc;n Qu&aacute;n:
+                    input(type='text', name='country', value= student? student.country: "")
+                .tt
+                    h2
+                        i.fas.fa-mail-bulk
+                        | THÔNG TIN PHỤ HUYNH
+                .main
+                    div
+                        h3 Th&ocirc;ng tin Cha
+                        .tv
+                            label(for='nameFather') H&#x1ECD; t&ecirc;n:
+                            input(type='text', name='nameFather',value=student? student._doc.parent[0].nameFather:"")
+                        .tv
+                            label(for='dateF') N&abreve;m sinh:
+                            input(type='text', name='yearF',value=student? student._doc.parent[0].yearF:"")
+                        .tv
+                            label(for='countryF') Nguy&ecirc;n Qu&aacute;n:
+                            input(type='text', name='countryF',value=student? student._doc.parent[0].countryF:"")
+                        .tv
+                            label(for='phoneF') SDT:
+                            input(type='number', name='phoneF',value=student? student._doc.parent[0].phoneF:"")
+                        .tv
+                            label(for='jobF') ngh&#x1EC1; nghi&#x1EC7;p:
+                            input(type='text', name='jobF',value=student? student._doc.parent[0].jobF:"")
+                    div
+                        h3 Th&ocirc;ng tin M&#x1EB9;
+                        .tv
+                            label(for='nameMother') H&#x1ECD; t&ecirc;n:
+                            input(type='text', name='nameMother',value=student? student._doc.parent[1].nameMother:"")
+                        .tv
+                            label(for='dateM') N&abreve;m sinh:
+                            input(type='text', name='yearM',value=student? student._doc.parent[1].yearM:"")
+                        .tv
+                            label(for='countryM') Nguy&ecirc;n Qu&aacute;n:
+                            input(type='text', name='countryM',value=student? student._doc.parent[1].countryM:"")
+                        .tv
+                            label(for='PhoneM') SDT:
+                            input(type='text', name='phoneM',value=student? student._doc.parent[1].PhoneM:"")
+                        .tv
+                            label(for='JobM') ngh&#x1EC1; nghi&#x1EC7;p:
+                            input(type='text', name='JobM',value=student? student._doc.parent[1].JobM:"")
+                button Cập Nhập

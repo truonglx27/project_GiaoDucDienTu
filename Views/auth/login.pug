@@ -1,0 +1,60 @@
+
+extends ../layouts/common
+
+block content
+
+    .container
+        nav.header
+            .header-logo
+                .logo
+                    img(src='../img_logo/main-logo.png', alt='')
+                .btn-menu
+                    .btn
+                    span
+                    span
+                    span
+            .header-menu
+                ul
+                    li
+                        i.fas.fa-question
+                        b Nhóm Giải Đáp
+                    li
+                        i.fab.fa-facebook
+                        b Hướng Dẫn Sử Dụng
+                    li
+                        i.fas.fa-phone
+                        b 0354122233
+        .main-wrapper
+            .main-left
+                .left-top
+                    i.fas.fa-unlock-alt
+                    h2.text
+                        | ĐĂNG NHẬP HỆ THỐNG
+                .left-bottom
+                    h3.content-bottom
+                        p
+                            | GIÁO DỤC ĐIỆN TỬ  
+                            strong THÀNH PHỐ HÀ NỘI
+            .main-right
+                form.box-login(action="/auth/login" ,method="POST")
+                    img(src='../img_logo/man.png', alt='')
+                    h2 LOGIN
+                    .username
+                        | Tài Khoản :
+                        input(type='text', placeholder=' Enter Username',name="username",value= values? values.username: "")
+                    .password
+                        | Mật Khẩu :
+                        input(type='password', placeholder=' Enter Password', name="password",value=values? values.password:"")
+                    a(href='#')
+                        | Qu&ecirc;n M&#x1EAD;t Kh&#x1EA9;u 
+                        i.fas.fa-question
+                    button &Dstrok;&abreve;ng Nh&#x1EAD;p
+        .footer
+            .footer-left
+                img(src='../img_logo/so-gd-logo.png', alt='')
+                p S&#x1EDF; Gi&aacute;o D&#x1EE5;c và &Dstrok;ào T&#x1EA1;o Hà N&#x1ED9;i
+            .footer-right
+                img(src='../img_logo/team-right.jpg', alt='')
+                p
+                    | Ph&aacute;t tri&#x1EC3;n b&#x1EDF;i team 
+                    b INFO

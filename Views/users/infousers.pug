@@ -1,0 +1,74 @@
+extends ../layouts/interface
+
+block content
+
+    .container
+        nav.header
+            .header-left
+                a.right-alig(href='/users')
+                    img(src='./BTL_logo/logo_chinh.png', alt='')
+                i.fas.fa-map-marker-alt
+                h4.right-alig TR&#x1AF;&#x1EDC;NG THPT CAO B&Aacute; QU&Aacute;T
+                strong.right-pd.marg H&#x1ECD;c K&#x1EF3; 1
+                strong 2018-2019
+            .header-right
+                ul
+                    li
+                        a.pd-r(href='#')
+                            img(src='./BTL_logo/logo_facebook.png', alt='')
+                    li
+                        a.pd-r(href='##')
+                            img(src='./BTL_logo/logo_Tiwter.png', alt='')
+                    li
+                        a.pd-r(href='###')
+                            img(src='./BTL_logo/logo_youtube.png', alt='')
+                    li
+                        a.pd-r(href='####')
+                            img(src='./BTL_logo/logo_setting.png', alt='')
+                    if student
+                        li
+                            a(href='/auth/login')
+                                img(src='./BTL_logo/logo_user_1.png',title='Đăng Xuất')
+        .menu
+            ul
+                li
+                    i.fas.fa-users
+                    a(href='/users') QU&#x1EA2;N L&Yacute; H&#x1ED2; S&#x1A0; H&#x1ECC;C SINH
+                li
+                    i.fas.fa-book
+                    a(href='###') QU&#x1EA2;N L&Yacute; T&Agrave;I KHO&#x1EA2;N H&#x1ECC;C SINH
+        .main
+            .title
+                .title-left
+                    i.fas.fa-book-reader
+                    h3 QU&#x1EA2;N L&Yacute; H&#x1ED2; S&#x1A0; H&#x1ECC;C SINH
+                .title-right
+                    a(href="/users/create") THÊM HỌC SINH
+                
+            .table
+                table(border='1', cellspacing='0', cellpadding='5')
+                    thead
+                        tr
+                            th(rowspan='2') H&#x1ECC; T&Ecirc;N
+                            th(rowspan='2') GI&#x1EDA;I T&Iacute;NH
+                            th(rowspan='2') NG&Agrave;Y SINH
+                            th(rowspan='2') L&#x1EDA;P
+                            th(colspan='2') THÔNG TIN TÀI KHOẢN
+                            th(rowspan='2') X&#x1EEC; L&Yacute;
+                        tr
+                            th TÀI KHOẢN
+                            th MẬT KHẨU
+                    tbody
+                        each student in students
+                            tr
+                                td= student.name
+                                td=student.gender
+                                td=student.date
+                                td 11D1
+                                td=student.username? student.username :""
+                                td=student.password ? student.password :""
+                                td
+                                    a(href='/users/updateTK/' + student._id, title='Chỉnh Sửa')
+                                        i.fas.fa-pen
+                                    a(href='/users/del/'+ student._id, title='Xoá')
+                                        i.fas.fa-trash-alt

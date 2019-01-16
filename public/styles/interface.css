@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Aleo|Roboto+Mono');
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    /* background-image: url(./img_logo/background_interface.jpg); */
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-left {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 50px;
+    font-size: 14px;
+}
+
+.header-left h4 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #2f3e57;
+}
+
+.header-left .right-alig {
+    padding-right: 10px;
+}
+
+.header-left i {
+    padding-right: 5px;
+    opacity: 0.4;
+}
+
+.header-left .marg {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid grey;
+    ;
+}
+
+.header-left img {
+    width: 45px;
+    height: 45px;
+}
+
+.header-right {
+    padding: 0;
+    margin: 0;
+    padding-right: 20px;
+    display: flex;
+}
+
+.header-right ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+ul li a img {
+    width: 30px;
+    height: 30px;
+}
+
+.header ul li {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid wheat;
+}
+
+.header ul li:last-child {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.menu {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    background-color: #ccddfb;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.menu ul li {
+    padding: 15px 0;
+}
+
+.menu ul li a {
+    font-family: 'Aleo', serif;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.menu ul li:hover {
+    background-color: #c8ced3;
+    border-radius: 10px;
+}
+
+.menu ul li i {
+    color: #63c2de
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3f72be;
+    border-bottom: 1px solid #568fe6;
+    margin: 0;
+}
+
+.title h3 {
+    padding: 0;
+    margin: 0;
+    padding-left: 15px;
+}
+
+.title-right {
+    padding: 12px 10px 10px 15px;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    color: #fff;
+}
+
+.title-right a {
+    text-decoration: none;
+    color: white;
+}
+
+.title-left {
+    display: flex;
+    /* background-color: #3f72be;
+    border-bottom: 1px solid #568fe6; */
+    padding: 10px 10px 10px 15px;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    color: #fff;
+}
+
+.table {
+    padding: 0 2px;
+}
+
+.table tr th {
+    color: #3f72be;
+}
+
+.table thead tr th {
+    background-color: #e6e6e6;
+    color: #3f72be;
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid #d2d2d2;
+    border-left: 0;
+    border-bottom: 0;
+}
+
+.table tbody tr td {
+    padding: 10px 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 500;
+    /* text-transform: uppercase; */
+    border: 1px solid #d2d2d2;
+}
+
+table {
+    width: 100%;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+
+.table tbody tr td i {
+    padding-left: 15px;
+}
+
+.table tbody tr td button {
+    border: none;
+    outline: none;
+    padding-left: 15px;
+}

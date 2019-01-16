@@ -1,0 +1,182 @@
+extends ../layouts/information
+
+block content
+    .container
+        nav.header
+            .header-left
+                a.right-alig(href='/users')
+                    img(src='../BTL_logo/logo_chinh.png', alt='')
+                i.fas.fa-map-marker-alt
+                h4.right-alig TR&#x1AF;&#x1EDC;NG THPT CAO B&Aacute; QU&Aacute;T
+                strong.right-pd.marg H&#x1ECD;c K&#x1EF3; 1
+                strong 2018-2019
+            .header-right
+                ul
+                    li
+                        a.pd-r(href='#')
+                            img(src='../BTL_logo/logo_facebook.png', alt='')
+                    li
+                        a.pd-r(href='##')
+                            img(src='../BTL_logo/logo_Tiwter.png', alt='')
+                    li
+                        a.pd-r(href='###')
+                            img(src='../BTL_logo/logo_youtube.png', alt='')
+                    li
+                        a.pd-r(href='####')
+                            img(src='../BTL_logo/logo_setting.png', alt='')
+                    if student
+                        li
+                            a(href='/auth/login')
+                                img(src='./BTL_logo/logo_user_1.png',title='Đăng Xuất')
+        .menu
+            ul
+                li
+                    i.fas.fa-users
+                    a(href='/users') QU&#x1EA2;N L&Yacute; H&#x1ED2; S&#x1A0; H&#x1ECC;C SINH
+                li
+                    i.fas.fa-book
+                    a(href='###') QU&#x1EA2;N L&Yacute; T&Agrave;I KHO&#x1EA2;N H&#x1ECC;C SINH
+        .main
+            .cell-left
+                h2
+                    i.fas.fa-file-alt
+                    span= student.username
+            .cell-right
+            .display-left
+                .avatar
+                    img(src='../img_logo/avatar-default.jpg', alt='')
+                .name
+                    h3=student.name
+                .info-menu
+                    ul
+                        li= student.gender
+                            i.fas.fa-venus
+                        li= student.date
+                            i.far.fa-calendar-alt
+            .display-right
+                .title
+                    i.far.fa-check-circle
+                    span
+                        | &dstrok;&abreve;ng k&yacute; s&#x1ED5; li&ecirc;n l&#x1EA1;c &dstrok;i&#x1EC7;n t&#x1EED; : 
+                        strong 0337954777
+                .tl
+                    div
+                        label(for='') tr&#x1B0;&#x1EDD;ng hi&#x1EC7;n t&#x1EA1;i:
+                        span THPT Cao B&aacute; Qu&aacute;t-Qu&#x1ED1;c Oai
+                    div
+                        label(for='') kh&#x1ED1;i h&#x1ECD;c hi&#x1EC7;n t&#x1EA1;i:
+                        span kh&#x1ED1;i 11
+                    div
+                        label(for='') l&#x1EDB;p h&#x1ECD;c hi&#x1EC7;n t&#x1EA1;i:
+                        span 11D1
+                .tu
+                    h2
+                        i.far.fa-user
+                        |  Thông tin cá nhân
+                .tl
+                    div
+                        label(for='') Họ tên:
+                        span= student.name
+                    div
+                        label(for='') Giới tính :
+                        span= student.gender
+                    div
+                        label(for='') Ngày sinh:
+                        span= student.date
+                .tv
+                    label(for='') Nguy&ecirc;n Qu&aacute;n:
+                    span=student.country?student.country:"Hà Nội"
+                //- .tu
+                //-     h2
+                //-         i.fas.fa-mail-bulk
+                //-         | Th&ocirc;ng tin li&ecirc;n h&#x1EC7;
+                //- .tv
+                //-     label(for='') N&#x1A1;i sinh:
+                //-     span H&agrave; T&acirc;y
+                //- .tv
+                //-     label(for='') Nguy&ecirc;n Qu&aacute;n:
+                //-     span X&atilde; Ti&ecirc;n Ph&#x1B0;&#x1A1;ng , Huy&#x1EC7;n Ch&#x1B0;&#x1A1;ng M&#x1EF9;, tp H&agrave; N&#x1ED9;i
+                .tv
+                    label(for='') S&#x1ED1; &dstrok;i&#x1EC7;n tho&#x1EA1;i:
+                    span 0975676666
+                .tu
+                    h2
+                        i.fas.fa-mail-bulk
+                        | Th&ocirc;ng tin ph&#x1EE5; huynh
+                        h3 Th&ocirc;ng tin Cha
+                .tv
+                    label(for='') H&#x1ECD; t&ecirc;n:
+                    span=student._doc.parent[0].nameFather
+                .tv
+                    label(for='') N&abreve;m sinh:
+                    span=student._doc.parent[0].yearF ? student._doc.parent[0].yearF : "1974"
+                .tv
+                    label(for='') Nguy&ecirc;n Qu&aacute;n:
+                    span=student._doc.parent[0].countryF ? student._doc.parent[0].countryF : "Chương Mỹ, tp Hà Nội"
+                .tv
+                    label(for='') Ngh&#x1EC1; nghi&#x1EC7;p
+                    span=student._doc.parent[0].jobF ? student._doc.parent[0].jobF: "Làm Ruộng"
+                .tu
+                    h3 Th&ocirc;ng tin M&#x1EB9;
+                .tv
+                    label(for='') H&#x1ECD; t&ecirc;n:
+                    span=student._doc.parent[1] ? student._doc.parent[1].nameMother:"Nguyễn Thị Hoa"
+                .tv
+                    label(for='') N&abreve;m sinh:
+                    span=student._doc.parent[1].yearM ? student._doc.parent[1].yearM : "1978"
+                .tv
+                    label(for='') Nguy&ecirc;n Qu&aacute;n:
+                    span=student._doc.parent[1].countryM ? student._doc.parent[1].countryM : "Bắc Ninh"
+                .tv
+                    label(for='') Ngh&#x1EC1; nghi&#x1EC7;p
+                    span=student._doc.parent[1].JobM ? student._doc.parent[1].JobM: "Làm Ruộng"
+                .tu
+                    h2
+                        i.fas.fa-book-open
+                        | Qu&aacute; tr&igrave;nh h&#x1ECD;c t&#x1EAD;p
+                table(border='1', cellspacing='0', cellpadding='5')
+                    thead
+                        tr
+                            th(rowspan='2') N&Abreve;M H&#x1ECC;C
+                            th(rowspan='2') TR&#x1AF;&#x1EDC;NG
+                            th(rowspan='2') L&#x1EDA;P
+                            th(colspan='3') &Dstrok;I&#x1EC2;M TRUNG B&Igrave;NH
+                            th(colspan='3') X&#x1EBE;P LO&#x1EA0;I H&#x1EA0;NH KI&#x1EC2;M
+                        tr
+                            td HK1
+                            td HK2
+                            td C&#x1EA2; N&Abreve;M
+                            td HK1
+                            td HK2
+                            td C&#x1EA2; N&Abreve;M
+                    tbody
+                        tr
+                            td 2016-2017
+                            td Tr&#x1B0;&#x1EDD;ng THPT Cao B&aacute; Qu&aacute;t
+                            td 10A1
+                            td=student._doc.scrore ? student._doc.scrore[0].Hk1 : 7.9
+                            td=student._doc.scrore ? student._doc.scrore[0].Hk2 : 7.5
+                            td 8.8
+                            td t&#x1ED1;t
+                            td t&#x1ED1;t
+                            td t&#x1ED1;t
+                        tr
+                            td 2017-2018
+                            td Tr&#x1B0;&#x1EDD;ng THPT Cao B&aacute; Qu&aacute;t
+                            td 11A1
+                            td=student._doc.scrore ? student._doc.scrore[1].Hk1 : 8.3
+                            td=student._doc.scrore  ? student._doc.scrore[1].Hk2 : 8.6
+                            td 8.4 
+                            td t&#x1ED1;t
+                            td t&#x1ED1;t
+                            td t&#x1ED1;t
+                        tr
+                            td 2018-2019
+                            td Tr&#x1B0;&#x1EDD;ng THPT Cao B&aacute; Qu&aacute;t
+                            td 12A1
+                            td=student._doc.scrore  ? student._doc.scrore[2].Hk1 : 7.6
+                            td=student._doc.scrore ? student._doc.scrore[2].Hk2 :8.2
+                            td 8.5
+                            td t&#x1ED1;t
+                            td tốt
+                            td tốt
